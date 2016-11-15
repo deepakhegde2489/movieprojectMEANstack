@@ -47,5 +47,15 @@
     "watchify": "^3.7.0",
     "webpack": "^1.10.0",
     "webpack-dev-middleware": "^1.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github/deepakhegde2489/cityTemplate.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "angular",
+    "node"
+  ]
 }
