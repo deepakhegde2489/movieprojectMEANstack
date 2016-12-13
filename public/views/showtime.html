@@ -1,0 +1,30 @@
+<div class="nav1">
+    <center>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Showtime</th>
+                  
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+
+                    
+                    <td><input ng-model="showtime.showtimeTime"  type="time" id="myTime" ></td>
+                    <td><button ng-click="addShowtime(showtime)" class="fa fa-plus" aria-hidden="true"></button></td>
+
+                    
+
+                </tr>
+                <tr ng-repeat=" showtime in showtimeList">
+
+                    <td>{{ showtime.showtimeTime | date:'HH:mm a'}}</td>
+                    <td><button ng-click="removeShowtime(showtime)" class="fa fa-trash-o" aria-hidden="true"></button></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </center>

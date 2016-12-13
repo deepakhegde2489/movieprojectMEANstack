@@ -3,6 +3,9 @@ var logger = require('morgan');
 var express = require('express');
 var routes = require('./routes/movie-crud');
 var routes1 = require('./routes/city-crud');
+var routes3 = require('./routes/showtime-crud');
+var routes4 = require('./routes/theatre-crud');
+var routes5 = require('./routes/assign-crud');
 
 var bodyParser=require('body-parser');
 
@@ -12,6 +15,9 @@ app.use(bodyParser.json());
 
 app.use('/movie', routes)
 app.use('/city', routes1)
+app.use('/showtime', routes3)
+app.use('/theatre', routes4)
+app.use('/assign', routes5)
 
 var mongo = require('mongodb');
 var mongoose = require('mongoose');

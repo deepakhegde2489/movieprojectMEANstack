@@ -28,6 +28,20 @@ app.config(function($routeProvider) {
     templateUrl: 'views/city.html',
     controller: 'CityController',
   })
+  .when('/showtime', {
+    templateUrl: 'views/showtime.html',
+    controller: 'ShowtimeController',
+  })
+  .when('/theatre', {
+    templateUrl: 'views/theatre.html',
+    controller: 'TheatreController',
+
+  })
+  .when('/assign', {
+    templateUrl: 'views/assign.html',
+    controller: 'AssignController',
+
+  })
   .otherwise({
     redirectTo: '/home',
   });

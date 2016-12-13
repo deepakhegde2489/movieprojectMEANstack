@@ -44,13 +44,13 @@ module.exports = function($scope, $http) {
 
     $scope.editCity = function (cit) {
          $http.get('/city/getCity/' + cit._id).success(function (response) {
-            $scope.city = response[0];
+            $scope.cit = response[0];
         });
     };
 
     $scope.updateCity = function () {
         console.log("REACHED UPDATE");
-        console.log($scope.city._id);
+        console.log($scope.cit._id);
         $http.put('/city/updateCity/' + $scope.cit._id, $scope.cit).success(function (response) {
             console.log(response);
             refresh();

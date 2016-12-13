@@ -1,0 +1,71 @@
+<div class="nav1">
+    <center>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Assign</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+     
+                
+                
+
+                <tr>
+                <div ng-app="movieApp" data-ng-controller="BookingController as theChildController">
+                
+                  Movie :<select id="assignSelect"  class="assignSelect" ng-model="$parent.assign.movieName " >
+                    <option ng-repeat="movi in moviList " >{{ movi.moviTitle }}</option>
+                </select>
+                </div>
+                <tr>
+                </tr>
+                
+                <div ng-app="movieApp" data-ng-controller="TheatreController as theChildController">
+                                 
+                
+
+                  Theatre :<select id="assignTSelect"  class="assignTSelect" ng-model="$parent.assign.theatreName " >
+
+                    <option ng-repeat="theatre in theatreList " >{{ theatre.theatreName }}</option>
+                    
+                </select>
+                </div>
+               
+         
+
+                </tr>   
+                               
+                
+                
+                <tr>
+
+
+                   
+                    
+                    <td></td>
+                    <td></td>
+                    <td><button ng-click="addAssign(assign)" class="fa fa-plus" aria-hidden="true"  ></button></td>
+
+                    <!-- <td><button ng-click="updateTheatre(theatre)"  class="fa fa-refresh" aria-hidden="true"></button></td> -->
+
+
+                </tr>
+               
+                
+
+
+
+            </tbody>
+            <tr ng-repeat="assign in assignList" ng-model="assign">
+                    <td>{{assign.movieName}}</td>
+                    <td>{{assign.theatreName}}</td>
+                    
+                   
+                    <td><button ng-click="removeAssign(assign)" class="fa fa-trash-o" aria-hidden="true"></button></td>
+                    
+               </tr>
+        </table>
+    </center>

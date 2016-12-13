@@ -1,0 +1,66 @@
+<div class="nav1">
+    <center>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Theatre</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+     
+                
+                
+
+                <tr>
+                <div ng-app="movieApp" data-ng-controller="CityController as theChildController">
+                
+                   City  :<select id="citySelect">
+                    <option ng-repeat="cit in cityList " >{{ cit.citName }}</option>
+                </select>
+                </div>
+                <tr>
+                </tr>
+                
+                <div ng-app="movieApp" data-ng-controller="ShowtimeController as theChildController">
+                                 
+                
+
+                   Showtime  :<select id="showtimeSelect"  class="showtimeSelect" multiple="multiple">
+
+                    <option ng-repeat="showtime in showtimeList " >{{ showtime.showtimeTime | date:'HH:mm a'}}</option>
+                    
+                </select>
+                </div>
+               
+         
+
+                </tr>   
+                               
+                
+                
+                <tr>
+
+
+                    <td><input ng-model="theatre.theatreName " /></td>
+                    
+                    <td></td>
+                    <td></td>
+                    <td><button ng-click="addTheatre(theatre)" class="fa fa-plus" aria-hidden="true"></button></td>
+
+                    <td><button ng-click="updateTheatre(theatre)"  class="fa fa-refresh" aria-hidden="true"></button></td>
+
+
+                </tr>
+               
+                <tr ng-repeat=" theatre in theatreList">
+                    <td>{{theatre.theatreName}}</td>
+                    <td>{{ theatre.theatreCity}}</td>
+                    <td>{{ theatre.theatreTime | date:'HH:mm a'}}</td>
+                    <td><button ng-click="removeTheatre(theatre)" class="fa fa-trash-o" aria-hidden="true"></button></td>
+                    <td><button ng-click="editTheatre(theatre)" class="fa fa-pencil" aria-hidden="true"></button></td>
+             :    </tr>
+            </tbody>
+        </table>
+    </center>

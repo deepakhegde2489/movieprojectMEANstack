@@ -11,48 +11,54 @@ router.use(bodyParser.urlencoded({ extended: true }))
 
 var mongoose = require('mongoose');
 
-var citySchema = mongoose.Schema({
+var assignSchema = mongoose.Schema({
  
-  citName: String,
+  theatreName: String,
+  movieName: String,
+  
   /*moviLanguage: String,
   moviGenre: String,
   moviPoster: String,
   moviDirector: String,
   moviActors: String*/
  });
-var City = mongoose.model('City', citySchema, 'city');
+var Assign = mongoose.model('Assign', assignSchema, 'assign');
 
 //Movie
-router.get('/getCity', function (req, res) {
+router.get('/getAssign', function (req, res) {
     console.log("REACHED GET FUNCTION ON SERVER");
-    City.find({}, function (err, docs) {
+    Assign.find({}, function (err, docs) {
          res.json(docs);
          
     });
 });
 
-router.get('/getCity/:id', function (req, res) {
+router.get('/getAssign/:id', function (req, res) {
     console.log("REACHED GET ID FUNCTION ON SERVER");
-     City.find({_id: req.params.id}, function (err, docs) {
+     Assign.find({_id: req.params.id}, function (err, docs) {
          res.json(docs);
          
     });
 });
 
-router.post('/addCity', function(req, res){
+router.post('/addAssign', function(req, res){
  console.log(req.body);
   
  
-  var name = req.body.citName;
+  var name = req.body.theatreName;
+  var name1 = req.body.movieName;
+ // var name2 = req.body.theatreTime;
   /*var language = req.body.Language;
   var genre = req.body.Genre;
   var poster = req.body.Poster;
   var director = req.body.Director;
   var actors = req.body.Actors;*/
 
-  var city = new City({
+  var assign = new Assign({
    
-    citName: name,
+    theatreName: name,
+    movieName: name1,
+    // theatreTime: name2,
    /*moviLanguage: language,
     moviGenre: genre,
     moviPoster: poster,
@@ -61,26 +67,26 @@ router.post('/addCity', function(req, res){
    
   });
 
-  city.save(function(err, docs){
+  assign.save(function(err, docs){
     if ( err ) throw err;
-    console.log("City Saved Successfully");
+    console.log("Assigned Successfully");
     res.json(docs);
   });
 
 
   })
 
-router.delete('/deleteCity/:id', function(req, res){
+router.delete('/deleteAssign/:id', function(req, res){
    console.log("REACHED Delete FUNCTION ON SERVER");
-      City.remove({_id:req.params.id}, function(err, docs){
+      Assign.remove({_id:req.params.id}, function(err, docs){
         res.json(docs);
     });
 })
 
-router.put('/updateCity/:id', function(req, res){
+router.put('/updateAssign/:id', function(req, res){
     console.log("REACHED PUT");
     console.log(req.body);
-    City.findOneAndUpdate({_id:req.params.id}, req.body, function (err, data) {
+    Assign.findOneAndUpdate({_id:req.params.id}, req.body, function (err, data) {
       console.log(data);
       res.json(data);
     });

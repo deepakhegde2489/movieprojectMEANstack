@@ -27,6 +27,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 90%;
+    padding-left:250px;
 }
 
 .fgm-movie-align {
@@ -35,4 +36,30 @@
 
 .filter-movies {
     margin-bottom: 40px;
+}
+
+
+.navbar-fixed-left {
+  width: 250px;
+  position: absolute;
+  border-radius: 0;
+  height: 100%;
+  display:block;
+  
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  
+
+}
+
+
+
+
+.nav1{
+    padding-left:250px;
+} 
+.movies-wrapper{
+    
 }

@@ -50,12 +50,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github/deepakhegde2489/cityTemplate.git"
+    "url": "git+https://github.com//deepakhegde2489/movieprojectMEANstack.git"
   },
   "keywords": [
     "html",
     "css",
     "angular",
     "node"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/deepakhegde2489/movieprojectMEANstack/issues"
+  },
+  "homepage": "https://github.com/deepakhegde2489/movieprojectMEANstack#readme"
 }

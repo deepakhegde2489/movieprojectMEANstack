@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Movie Booking</title>
+  <title>Registering</title>
   <!-- load bootstrap and fontawesome via CDN -->
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
@@ -11,21 +11,29 @@
 <body  ng-app="movieApp">
 <div>
  <header>
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-inverse navbar-fixed-left navbar-offset">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/">Movie Booking</a>
                 </div>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#/booking"><i class="fa fa-shield"></i> Booking</a></li>
-                    <li><a href="#/cancellation"><i class="fa fa-comment"></i> Cancellation</a></li>
+                
+                <ul class="nav navbar-nav">
+                    
+                    
                     <li><a href="#/city"><i class="fa fa-shield"></i> City</a></li>
+                    <li><a href="#/showtime"><i class="fa fa-shield"></i> Showtime</a></li>
+                    <li><a href="#/theatre"><i class="fa fa-shield"></i> Theatre</a></li>
+                    <li><a href="#/booking"><i class="fa fa-shield"></i> Movies</a></li>
+                    <li><a href="#/assign"><i class="fa fa-shield"></i> Assign Movies</a></li>
+                    <!-- <li><a href="#/booking"><i class="fa fa-shield"></i> Book</a></li> -->
+                    
                 </ul>
+                
             </div>
             </nav>
         </header>
+
+        
     
   <div ng-view></div>
 

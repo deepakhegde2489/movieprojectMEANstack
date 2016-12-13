@@ -11,48 +11,48 @@ router.use(bodyParser.urlencoded({ extended: true }))
 
 var mongoose = require('mongoose');
 
-var citySchema = mongoose.Schema({
+var showtimeSchema = mongoose.Schema({
  
-  citName: String,
+  showtimeTime: String,
   /*moviLanguage: String,
   moviGenre: String,
   moviPoster: String,
   moviDirector: String,
   moviActors: String*/
  });
-var City = mongoose.model('City', citySchema, 'city');
+var Showtime = mongoose.model('Showtime', showtimeSchema, 'showtime');
 
 //Movie
-router.get('/getCity', function (req, res) {
+router.get('/getShowtime', function (req, res) {
     console.log("REACHED GET FUNCTION ON SERVER");
-    City.find({}, function (err, docs) {
+    Showtime.find({}, function (err, docs) {
          res.json(docs);
          
     });
 });
 
-router.get('/getCity/:id', function (req, res) {
+router.get('/getShowtime/:id', function (req, res) {
     console.log("REACHED GET ID FUNCTION ON SERVER");
-     City.find({_id: req.params.id}, function (err, docs) {
+     Showtime.find({_id: req.params.id}, function (err, docs) {
          res.json(docs);
          
     });
 });
 
-router.post('/addCity', function(req, res){
+router.post('/addShowtime', function(req, res){
  console.log(req.body);
   
  
-  var name = req.body.citName;
+  var name = req.body.showtimeTime;
   /*var language = req.body.Language;
   var genre = req.body.Genre;
   var poster = req.body.Poster;
   var director = req.body.Director;
   var actors = req.body.Actors;*/
 
-  var city = new City({
+  var showtime = new Showtime({
    
-    citName: name,
+    showtimeTime: name,
    /*moviLanguage: language,
     moviGenre: genre,
     moviPoster: poster,
@@ -61,26 +61,26 @@ router.post('/addCity', function(req, res){
    
   });
 
-  city.save(function(err, docs){
+  showtime.save(function(err, docs){
     if ( err ) throw err;
-    console.log("City Saved Successfully");
+    console.log("Showtime Saved Successfully");
     res.json(docs);
   });
 
 
   })
 
-router.delete('/deleteCity/:id', function(req, res){
+router.delete('/deleteShowtime/:id', function(req, res){
    console.log("REACHED Delete FUNCTION ON SERVER");
-      City.remove({_id:req.params.id}, function(err, docs){
+      Showtime.remove({_id:req.params.id}, function(err, docs){
         res.json(docs);
     });
 })
 
-router.put('/updateCity/:id', function(req, res){
+router.put('/updateShowtime/:id', function(req, res){
     console.log("REACHED PUT");
     console.log(req.body);
-    City.findOneAndUpdate({_id:req.params.id}, req.body, function (err, data) {
+    Showtime.findOneAndUpdate({_id:req.params.id}, req.body, function (err, data) {
       console.log(data);
       res.json(data);
     });
