@@ -15,7 +15,10 @@ var assignSchema = mongoose.Schema({
  
   theatreName: String,
   movieName: String,
-  
+  fromDate:String,
+  toDate:String,
+  price:String,
+  seats:String
   /*moviLanguage: String,
   moviGenre: String,
   moviPoster: String,
@@ -47,6 +50,10 @@ router.post('/addAssign', function(req, res){
  
   var name = req.body.theatreName;
   var name1 = req.body.movieName;
+  var name3 = req.body.fromDate;
+  var name4 = req.body.toDate;
+  var name5 =  req.body.price;
+   var name6 =  req.body.seats;
  // var name2 = req.body.theatreTime;
   /*var language = req.body.Language;
   var genre = req.body.Genre;
@@ -58,6 +65,10 @@ router.post('/addAssign', function(req, res){
    
     theatreName: name,
     movieName: name1,
+    fromDate:name3,
+    toDate:name4,
+    price: name5,
+    seats:name6
     // theatreTime: name2,
    /*moviLanguage: language,
     moviGenre: genre,

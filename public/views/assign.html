@@ -1,15 +1,16 @@
 <div class="nav1">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
     <center>
         <table class="table">
             <thead>
                 <tr>
-                    <th>Assign</th>
+                    Assign
                     
 
                 </tr>
             </thead>
             <tbody>
-     
+                
                 
                 
 
@@ -33,13 +34,25 @@
                     
                 </select>
                 </div>
-               
-         
+ 
+                From<input type="date" name="fromDate" id="fromDate" ng-model="$parent.assign.fromDate" >
+                To<input type="date" name="toDate" id="toDate" ng-model="$parent.assign.toDate " >
 
                 </tr>   
+                <tr>
+                 Price<input type="text" id="price" ng-model="$parent.assign.price " ></tr>
+                 <tr>
+                Number of Seats<input type="text" id="seats" ng-model="$parent.assign.seats"></tr>
+
                                
                 
                 
+
+
+
+
+
+
                 <tr>
 
 
@@ -62,7 +75,10 @@
             <tr ng-repeat="assign in assignList" ng-model="assign">
                     <td>{{assign.movieName}}</td>
                     <td>{{assign.theatreName}}</td>
-                    
+                    <td>{{assign.fromDate}}</td>
+                    <td>{{assign.toDate}}</td>                    
+                    <td>{{assign.price}}</td>                    
+                    <td>{{assign.seats}}</td>                    
                    
                     <td><button ng-click="removeAssign(assign)" class="fa fa-trash-o" aria-hidden="true"></button></td>
                     

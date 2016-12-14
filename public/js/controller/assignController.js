@@ -25,9 +25,28 @@ module.exports = function($scope, $http) {
 
                             var cty = document.getElementById("assignSelect");
                                 var cty1 = cty.options[cty.selectedIndex].text;
-                                assign.movieName = cty1;
+                               
+                            
+
+                               var d1=document.getElementById("fromDate").value;
+                                assign.fromDate=d1;
+                               
+                               
+
+                               var d2=document.getElementById("toDate").value;
+                                assign.fromDate=d2;
+
+                                var p=document.getElementById("price").value;
+                                assign.price=p;
+                               
+                                var s=document.getElementById("seats").value;
+                                assign.seats=s;
+                              
+                              
 
 
+
+                                
                        
                              $http.post('/assign/addAssign', assign).success(function (response) {
                                 
